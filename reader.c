@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:18:11 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/20 17:47:12 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/20 17:54:21 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,16 @@
 
 static int	check_ttms_uniqueness(t_fillit *flt, t_ttms *new_ttms)
 {
-	return (0);
+	int		i;
+
+	i = 0;
+	while (flt->tab_len > 0 && i < flt->tab_len)
+	{
+		if (ft_strequ(flt->ttms_tab[i]->data, new_ttms->data))
+			return (0);
+		++i;
+	}
+	return (1);
 }
 
 int			read_ttms(t_fillit *flt, char *path)
@@ -35,9 +44,9 @@ int			read_ttms(t_fillit *flt, char *path)
 	{
 		if (ret < 20 || (ret == 21 && buff[20] != '\n') || pret != 21)
 			return (flt_puterror("Invalid format!"));
-		if (create_ttms(&new_ttms, buff) == -1)
+		if (create_ttms(buff, &new_ttms) == -1)
 			return (-1);
-		if (check_ttms_uniqueness(flt, new_ttms))
+		if (!check_ttms_uniqueness(flt, new_ttms))
 			return (flt_puterror("Cannot have two of the same tetriminos!"));
 		flt->ttms_tab[flt->tab_len] = new_ttms;
 		++flt->tab_len;
