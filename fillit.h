@@ -6,7 +6,7 @@
 /*   By: yguaye <yguqye@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 11:42:04 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/20 13:47:46 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/20 14:57:18 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ typedef struct	s_fillit
 }				t_fillit;
 
 void			init_fillit(t_fillit *t);
+int				read_ttms(t_fillit *flt, char *path);
+int				flt_puterror(char *reason);
 
 #endif
