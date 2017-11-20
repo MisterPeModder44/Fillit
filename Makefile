@@ -6,6 +6,7 @@ INCLUDES = ./
 
 CC = /bin/gcc
 FLAGS = -Wall -Werror -Wextra
+RM = /bin/rm
 
 $(NAME): $(OBJS)
 	@echo "Compiling $(NAME)..."
@@ -16,11 +17,13 @@ $(NAME): $(OBJS)
 	@echo "Creating object files..."
 	$(CC) $(FLAGS) -I $(INCLUDES) -o $@ -c $<
 
-all:
+all: $(NAME)
 
 clean:
+	$(RM) -f $(OBJS)
 
 fclean: clean
+	$(RM) -f $(NAME)
 
 re: fclean all
 
