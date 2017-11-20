@@ -6,7 +6,7 @@
 /*   By: yguaye <yguqye@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 11:42:04 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/20 13:47:46 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/20 14:44:38 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,10 @@ typedef struct	s_fillit
 }				t_fillit;
 
 void			init_fillit(t_fillit *t);
+void			init_grid(t_fillit *t);
+void			set_tablen(t_fillit *t, int len);
+
+int		ft_sqrt(int nb);
+
 
 #endif
