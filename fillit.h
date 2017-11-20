@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ttms.h                                             :+:      :+:    :+:   */
+/*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yguaye <yguqye@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 11:42:04 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/20 11:46:42 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/20 13:47:46 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TTMS_H
-# define TTMS_H
+#ifndef FILLIT_H
+# define FILLIT_H
+
+#include <string.h>
 
 typedef struct	s_ttms
 {
@@ -21,5 +23,15 @@ typedef struct	s_ttms
 	int			height;
 	char		*data;
 }				t_ttms;
+
+typedef struct	s_fillit
+{
+	t_ttms		*ttms_tab[27];
+	int			tab_len;
+	char		*grid;
+	int			grid_size;
+}				t_fillit;
+
+void			init_fillit(t_fillit *t);
 
 #endif
