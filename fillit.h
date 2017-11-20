@@ -6,7 +6,7 @@
 /*   By: yguaye <yguqye@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 11:42:04 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/20 15:08:50 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/20 17:42:45 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,10 @@ void			set_tablen(t_fillit *t, int len);
 int				ft_sqrt(int nb);
 int				read_ttms(t_fillit *flt, char *path);
 int				flt_puterror(char *reason);
+void			free_fillit(t_fillit *t);
+void			set_grid_size(t_fillit *t, int len);
+void			grid_up(t_fillit *t);
+void			remove_ttms(t_fillit *t, int i);
+
 
 #endif
