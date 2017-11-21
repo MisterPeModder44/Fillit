@@ -6,7 +6,11 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 17:33:59 by pleroux           #+#    #+#             */
+<<<<<<< HEAD
+/*   Updated: 2017/11/21 17:24:18 by pleroux          ###   ########.fr       */
+=======
 /*   Updated: 2017/11/21 17:07:51 by yguaye           ###   ########.fr       */
+>>>>>>> d3023d532292d4902f23d2dc7da8589a3a80a3b4
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +28,15 @@ t_bool		set_ttms(t_fillit *t, int i)
 	 *  	la structure.
 	 *  	-> si non : continue a parcourir les autres cases
 	 */
-	size_t		index;
+	int		index;
 
 	index = 0;
-	while (index != t->tab_len)
+	while (index != (int)t->tab_len)
 	{
 		index = search_empty_case(t, index);
-		t->ttms_tab[i]->index = index;
 		if (index == ERROR)
 			return (FALSE);
+		t->ttms_tab[i]->index = index;
 		if (set_or_check_ttms(t, i, CHECK))
 		{
 			/*ok placement*/
@@ -55,18 +59,23 @@ int			search_empty_case(t_fillit *t, size_t index)
 	return (index);
 }
 
+#include <stdio.h>
+
 t_bool		set_or_check_ttms(t_fillit *t, int i, t_bool b_set_or_check)
 {
-	int		j;
-	int		offset;
-	int		id_ofs;
+	size_t		j;
+	size_t		offset;
+	size_t		id_ofs;
 
 	j = 0;
+	id_ofs = t->ttms_tab[i]->index;
+	printf("%lu\n", id_ofs);
 	while (j < 3)
 	{
 		offset = t->ttms_tab[i]->offset[j];
 		offset = ((offset > 1) ? (offset + (t->grid_size - 4)) : offset);
-		id_ofs = t->ttms_tab[i]->index + offset;
+		id_ofs += offset;
+		printf("%lu\n", id_ofs);
 		if (id_ofs >= t->grid_len || t->grid[id_ofs] != '.')
 		{
 			return (FALSE);

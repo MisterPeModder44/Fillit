@@ -6,7 +6,11 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:19:43 by pleroux           #+#    #+#             */
+<<<<<<< HEAD
+/*   Updated: 2017/11/21 16:48:13 by pleroux          ###   ########.fr       */
+=======
 /*   Updated: 2017/11/21 17:08:05 by yguaye           ###   ########.fr       */
+>>>>>>> d3023d532292d4902f23d2dc7da8589a3a80a3b4
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +36,8 @@ void			init_fillit(t_fillit *t)
 
 void			init_grid(t_fillit *t)
 {
-	int			i;
-	int			j;
+	size_t			i;
+	size_t			j;
 
 	i = 0;
 	j = 0;
