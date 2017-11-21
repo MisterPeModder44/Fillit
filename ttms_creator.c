@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 17:49:01 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 17:12:41 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/21 17:29:17 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ static t_bool	check_ttms_buff(char *buff)
 	}
 	return (TRUE);
 }
-
-#include <stdio.h>
 
 int				create_ttms(char *buff, t_ttms **nt)
 {

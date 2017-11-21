@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:18:11 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 17:15:25 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/21 17:28:28 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ static t_bool	check_ttms_uniqueness(t_fillit *flt, t_ttms *new_ttms)
 	}
 	return (TRUE);
 }
-
-#include <stdio.h>
 
 int				read_ttms(t_fillit *flt, char *path)
 {
