@@ -6,11 +6,7 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 17:33:59 by pleroux           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2017/11/21 12:33:26 by pleroux          ###   ########.fr       */
-=======
-/*   Updated: 2017/11/21 13:24:11 by yguaye           ###   ########.fr       */
->>>>>>> 1b72c6d28ee91db303df53caa39e4424e7e5869f
+/*   Updated: 2017/11/21 15:44:21 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +49,7 @@ t_bool		set_ttms(t_fillit *t, int i)
 int			search_empty_case(t_fillit *t, size_t index)
 {
 	while (t->grid[index] && t->grid[index] != '.')
-		++index;
+		index++;
 	if (!t->grid[index])
 		return (ERROR);
 	return (index);
@@ -69,17 +65,10 @@ t_bool		set_or_check_ttms(t_fillit *t, int i, t_bool b_set_or_check)
 	while (j < 3)
 	{
 		offset = t->ttms_tab[i]->offset[j];
+		offset = ((offset > 1) ? (offset + (t->grid_size - 4)) : offset);
 		id_ofs = t->ttms_tab[i]->index + offset;
-		if (id_ofs >= t->grid_len)
+		if (id_ofs >= t->grid_len || t->grid[id_ofs] != '.')
 		{
-			/*erreur overflow placement*/
-			return (FALSE);
-		}
-		else if (t->grid[id_ofs] != '.' && 
-				(t->grid[id_ofs] == '\n' || 
-				 t->grid[id_ofs] == '\0'))
-		{
-			/*erreur placement*/
 			return (FALSE);
 		}
 		else if (b_set_or_check == SET)
@@ -96,7 +85,7 @@ void		remove_ttms(t_fillit *t, size_t i)
 	int		j;
 
 	c = 'A' + i;
-	i = 0;
+	j = 0;
 	while (t->grid[j])
 	{
 		if (t->grid[j] == c)

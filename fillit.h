@@ -6,7 +6,7 @@
 /*   By: yguaye <yguqye@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 11:42:04 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 14:26:59 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/21 16:15:58 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # define		CHECK				0
 # define		SET					1
 # define		MOD(x)				((x < 0) ? 0 : x)
+# define		DEF_SIZE			4
 
 typedef enum		e_bool
 {
@@ -56,5 +57,6 @@ t_bool				set_ttms(t_fillit *t, int i);
 int					search_empty_case(t_fillit *t, size_t index);
 t_bool				set_or_check_ttms(t_fillit *t, int i, t_bool b_set_check);
 void				remove_ttms(t_fillit *t, size_t i);
+void				print_grid(t_fillit *t);
 
 #endif
