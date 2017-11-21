@@ -6,16 +6,13 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 17:33:59 by pleroux           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2017/11/21 17:24:18 by pleroux          ###   ########.fr       */
-=======
-/*   Updated: 2017/11/21 17:07:51 by yguaye           ###   ########.fr       */
->>>>>>> d3023d532292d4902f23d2dc7da8589a3a80a3b4
+/*   Updated: 2017/11/21 18:17:40 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "fillit.h"
+#include <stdio.h>
 
 t_bool		set_ttms(t_fillit *t, int i)
 {
@@ -31,15 +28,17 @@ t_bool		set_ttms(t_fillit *t, int i)
 	int		index;
 
 	index = 0;
-	while (index != (int)t->tab_len)
+	while (index <= (int)t->grid_len)
 	{
 		index = search_empty_case(t, index);
+		fprintf(stderr, "set_ttms index : %d\n", index);
 		if (index == ERROR)
 			return (FALSE);
 		t->ttms_tab[i]->index = index;
 		if (set_or_check_ttms(t, i, CHECK))
 		{
 			/*ok placement*/
+			fprintf(stderr, "set_tms : OK placement\n");
 			if (!set_or_check_ttms(t, i, SET))
 				flt_puterror("can't set ttms");
 			return (TRUE);
@@ -47,6 +46,8 @@ t_bool		set_ttms(t_fillit *t, int i)
 		++index;
 	}
 	t->ttms_tab[i]->index = 0;
+
+			fprintf(stderr, "set_tms : NOK placement\n");
 	return (FALSE);
 }
 
@@ -59,7 +60,6 @@ int			search_empty_case(t_fillit *t, size_t index)
 	return (index);
 }
 
-#include <stdio.h>
 
 t_bool		set_or_check_ttms(t_fillit *t, int i, t_bool b_set_or_check)
 {
@@ -69,15 +69,16 @@ t_bool		set_or_check_ttms(t_fillit *t, int i, t_bool b_set_or_check)
 
 	j = 0;
 	id_ofs = t->ttms_tab[i]->index;
-	printf("%lu\n", id_ofs);
-	while (j < 3)
+	fprintf(stderr, "  --> id_ofs : %lu\n", id_ofs);
+	while (j < 4)
 	{
 		offset = t->ttms_tab[i]->offset[j];
 		offset = ((offset > 1) ? (offset + (t->grid_size - 4)) : offset);
 		id_ofs += offset;
-		printf("%lu\n", id_ofs);
+		fprintf(stderr, "  --> id_ofs : %lu grid_len :%lu\n", id_ofs, t->grid_len);
 		if (id_ofs >= t->grid_len || t->grid[id_ofs] != '.')
 		{
+			fprintf(stderr, "CHECK FALSE\n");
 			return (FALSE);
 		}
 		else if (b_set_or_check == SET)
@@ -85,6 +86,7 @@ t_bool		set_or_check_ttms(t_fillit *t, int i, t_bool b_set_or_check)
 		++j;
 	}
 	/*ok placement*/
+			fprintf(stderr, "TTMS OK\n");
 	return (TRUE);
 }
 

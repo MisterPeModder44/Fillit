@@ -6,11 +6,7 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:19:43 by pleroux           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2017/11/21 16:48:13 by pleroux          ###   ########.fr       */
-=======
-/*   Updated: 2017/11/21 17:08:05 by yguaye           ###   ########.fr       */
->>>>>>> d3023d532292d4902f23d2dc7da8589a3a80a3b4
+/*   Updated: 2017/11/21 17:55:50 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +40,7 @@ void			init_grid(t_fillit *t)
 	if (t->grid)
 		free(t->grid);
 	t->grid = ft_strnew((t->grid_size * t->grid_size) + t->grid_size + 1);
-	t->grid_len = ft_strlen(t->grid);
+	t->grid_len = (t->grid_size * t->grid_size) + t->grid_size;
 	while (i < t->grid_size)
 	{
 		while (j < t->grid_size)

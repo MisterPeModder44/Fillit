@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 17:18:31 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 17:32:10 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/21 17:46:54 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int		main(int argc, char **argv)
 	if (argc == 2)
 	{
 		init_fillit(&flt);
-		init_grid(&flt);
 		if (read_ttms(&flt, argv[1]) == 0)
 		{
 			set_grid_size(&flt, flt.tab_len);
+			init_grid(&flt);
 			resolve(&flt, 0);
 			print_grid(&flt);
 			return (0);
