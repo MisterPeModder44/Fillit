@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:39:10 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 13:06:48 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/21 16:10:35 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ void			free_fillit(t_fillit *t)
 
 void			grid_up(t_fillit *t)
 {
-	set_grid_size(t, t->tab_len);
-	init_grid(t);
+	if (t->grid_size > 21)
+		flt_puterror("t->grid_size too big");
+	else
+	{
+		++(t->grid_size);
+		init_grid(t);
+	}
 }
