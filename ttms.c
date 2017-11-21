@@ -6,7 +6,7 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 17:33:59 by pleroux           #+#    #+#             */
-/*   Updated: 2017/11/21 12:20:01 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/21 12:33:26 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,6 @@ void		remove_ttms(t_fillit *t, size_t i)
 	{
 		if (t->grid[j] == c)
 			t->grid[j] = '.';
-		j++;
+		++j;
 	}
 }
