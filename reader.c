@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:18:11 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 21:15:54 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/21 23:07:33 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ int				read_ttms(t_fillit *flt, char *path)
 			return (flt_puterror("Invalid format!"));
 		if (create_ttms(buff, &new_ttms) == -1)
 			return (-1);
-		//if (!check_ttms_uniqueness(flt, new_ttms))
-		//	return (flt_puterror("Cannot have two of the same tetriminos!"));
+		if (!check_ttms_uniqueness(flt, new_ttms))
+			return (flt_puterror("Cannot have two of the same tetriminos!"));
 		check_ttms_uniqueness(flt, new_ttms);
 		flt->ttms_tab[flt->tab_len] = new_ttms;
 		++flt->tab_len;
