@@ -6,7 +6,7 @@
 /*   By: yguaye <yguqye@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 11:42:04 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 17:09:09 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/21 17:42:40 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ typedef enum		e_bool
 	TRUE = 1,
 	FALSE = 0,
 }					t_bool;
-
 
 typedef struct		s_ttms
 {
