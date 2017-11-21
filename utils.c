@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:39:10 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 17:49:15 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/21 18:06:07 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "libft/libft.h"
 #include "fillit.h"
 
-int				flt_puterror(char *reason)
+int		flt_puterror(char *reason)
 {
 	if (DEBUG_MODE)
 	{
@@ -27,7 +27,7 @@ int				flt_puterror(char *reason)
 	return (ERROR);
 }
 
-void			free_fillit(t_fillit *t)
+void	free_fillit(t_fillit *t)
 {
 	int			i;
 
@@ -40,7 +40,7 @@ void			free_fillit(t_fillit *t)
 	free(t->grid);
 }
 
-void			grid_up(t_fillit *t)
+void	grid_up(t_fillit *t)
 {
 	if (t->grid_size > 21)
 		flt_puterror("t->grid_size too big");
