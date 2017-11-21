@@ -6,7 +6,11 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:19:43 by pleroux           #+#    #+#             */
+<<<<<<< HEAD
+/*   Updated: 2017/11/21 12:34:25 by pleroux          ###   ########.fr       */
+=======
 /*   Updated: 2017/11/21 13:14:32 by yguaye           ###   ########.fr       */
+>>>>>>> 1b72c6d28ee91db303df53caa39e4424e7e5869f
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +26,7 @@ void			init_fillit(t_fillit *t)
 	while (i < 27)
 	{
 		t->ttms_tab[i] = NULL;
-		i++;
+		++i;
 	}
 	t->tab_len = 0;
 	t->grid_size = 0;
@@ -46,11 +50,11 @@ void			init_grid(t_fillit *t)
 		while (j < t->grid_size)
 		{
 			t->grid[((t->grid_size + 1) * i) + j] = '.';
-			j++;
+			++j;
 		}
 		t->grid[((t->grid_size + 1) * i) + j] = '\n';
 		j = 0;
-		i++;
+		++i;
 	}
 }
 
