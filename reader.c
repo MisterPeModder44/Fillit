@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:18:11 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 13:29:19 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/21 14:37:02 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@
 
 static t_bool	check_ttms_uniqueness(t_fillit *flt, t_ttms *new_ttms)
 {
-	/*
-	 *	To update with the new ttms storage method,
-	 *	when I figure out what pierre did to it...
-	 */
 	int		i;
+	int		j;
 
 	i = 0;
 	while (flt->tab_len > 0 && i < flt->tab_len)
 	{
-		if (ft_strequ(flt->ttms_tab[i]->data, new_ttms->data))
+		j = 0;
+		while (j < 3 && flt->ttms_tab[i]->offset[j] == new_ttms->offset[j])
+			++j;
+		if (j == 3)
 			return (FALSE);
 		++i;
 	}
