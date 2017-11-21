@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 17:49:01 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 17:29:17 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/21 18:14:13 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,27 @@ static t_bool	check_ttms_buff(char *buff)
 	return (TRUE);
 }
 
+static int		put_offset(char *buff, t_ttms **nt, int *offset, int i)
+{
+	static int		j;
+
+	if (buff[i] == '#')
+	{
+		if (*offset > OFFSET_SIZE - 1)
+		{
+			free(*nt);
+			return (flt_puterror("A ttms cannot have more than 4 blocks"));
+		}
+		else if (*offset > 0)
+			(*nt)->offset[*offset] = j + 1;
+		++*offset;
+		j = 0;
+	}
+	else
+		++j;
+	return (0);
+}
+
 int				create_ttms(char *buff, t_ttms **nt)
 {
 	int		i;
@@ -48,20 +69,8 @@ int				create_ttms(char *buff, t_ttms **nt)
 	offset_index = 0;
 	while (i < 20)
 	{
-		if (buff[i] == '#')
-		{
-			if (offset_index > OFFSET_SIZE - 1)
-			{
-				free(*nt);
-				return (flt_puterror("A ttms cannot have more than 4 blocks"));
-			}
-			else if (offset_index > 0)
-				(*nt)->offset[offset_index] = j + 1;
-			++offset_index;
-			j = 0;
-		}
-		else
-			j++;
+		if (put_offset(buff, nt, &offset_index, i) == ERROR)
+			return (ERROR);
 		++i;
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:39:10 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 17:37:15 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/21 18:06:07 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,19 @@
 #include "libft/libft.h"
 #include "fillit.h"
 
-int				flt_puterror(char *reason)
+int		flt_puterror(char *reason)
 {
-	ft_putstr_fd("\x1b[1;31m\x1b[4mError:\x1b[0m ", STDERR_FILENO);
-	ft_putendl_fd(reason, STDERR_FILENO);
+	if (DEBUG_MODE)
+	{
+		ft_putstr_fd("\x1b[1;31m\x1b[4mError:\x1b[0m ", STDERR_FILENO);
+		ft_putendl_fd(reason, STDERR_FILENO);
+	}
+	else
+		ft_putstr_fd("error\n", STDERR_FILENO);
 	return (ERROR);
 }
 
-void			free_fillit(t_fillit *t)
+void	free_fillit(t_fillit *t)
 {
 	int			i;
 
@@ -35,7 +40,7 @@ void			free_fillit(t_fillit *t)
 	free(t->grid);
 }
 
-void			grid_up(t_fillit *t)
+void	grid_up(t_fillit *t)
 {
 	if (t->grid_size > 21)
 		flt_puterror("t->grid_size too big");

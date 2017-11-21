@@ -6,7 +6,7 @@
 /*   By: yguaye <yguqye@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 11:42:04 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 17:49:11 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/21 18:25:51 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 
 # include <string.h>
 
-# define		ERROR				-1
-# define		CHECK				0
-# define		SET					1
-# define		MOD(x)				((x < 0) ? 0 : x)
-# define		DEF_SIZE			4
-# define		OFFSET_SIZE			4
-# define		TTMS_TAB			27
+# define ERROR			-1
+# define CHECK			0
+# define SET			1
+# define MOD(x)			((x < 0) ? 0 : x)
+# define DEF_SIZE		4
+# define OFFSET_SIZE	4
+# define TTMS_TAB		27
+# define DEBUG_MODE		1
 
 typedef enum		e_bool
 {
