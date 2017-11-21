@@ -6,7 +6,7 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 15:59:34 by pleroux           #+#    #+#             */
-/*   Updated: 2017/11/20 17:32:31 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/21 12:09:13 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int			resolve(t_fillit *t, int i)
 	}
 	else
 	{
-		remove_ttms(t, i - 1);
+		remove_ttms(t, MOD(i - 1));
 		return (resolve(t, i - 1));
 	}
 }

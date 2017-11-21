@@ -6,7 +6,7 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:19:43 by pleroux           #+#    #+#             */
-/*   Updated: 2017/11/20 17:25:47 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/21 10:22:27 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void			init_fillit(t_fillit *t)
 	}
 	t->tab_len = 0;
 	t->grid_size = 0;
+	t->grid_len = 0;
 	t->grid = NULL;
 }
 
@@ -39,6 +40,7 @@ void			init_grid(t_fillit *t)
 	if (t->grid)
 		free(t->grid);
 	t->grid = ft_strnew((t->grid_size * t->grid_size) + t->grid_size + 1);
+	t->grid_len = ft_strlen(t->grid);
 	while (i < t->grid_size)
 	{
 		while (j < t->grid_size)
@@ -55,7 +57,7 @@ void			init_grid(t_fillit *t)
 void			set_tablen(t_fillit *t, int len)
 {
 	t->tab_len = len;
-	set_grid_size(t->tab_len);
+	set_grid_size(t, t->tab_len);
 }
 
 void			set_grid_size(t_fillit *t, int len)
