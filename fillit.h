@@ -6,7 +6,7 @@
 /*   By: yguaye <yguqye@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 11:42:04 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 17:30:33 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/21 17:47:41 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define		DEF_SIZE			4
 # define		OFFSET_SIZE			4
 # define		TTMS_TAB			27
+# define		DEBUG_MODE			1
 
 typedef enum		e_bool
 {
