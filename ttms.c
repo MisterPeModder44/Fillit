@@ -6,14 +6,14 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 17:33:59 by pleroux           #+#    #+#             */
-/*   Updated: 2017/11/21 12:20:01 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/21 13:24:11 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "fillit.h"
 
-int			set_ttms(t_fillit *t, int i)
+t_bool		set_ttms(t_fillit *t, int i)
 {
 	/* Placement du ttms de la gauche vers la droite et du haut vers le bas
 	 *  -> Parcourt toute les cases 

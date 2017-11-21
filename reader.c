@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:18:11 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/20 17:54:21 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/21 13:29:19 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,25 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-static int	check_ttms_uniqueness(t_fillit *flt, t_ttms *new_ttms)
+static t_bool	check_ttms_uniqueness(t_fillit *flt, t_ttms *new_ttms)
 {
+	/*
+	 *	To update with the new ttms storage method,
+	 *	when I figure out what pierre did to it...
+	 */
 	int		i;
 
 	i = 0;
 	while (flt->tab_len > 0 && i < flt->tab_len)
 	{
 		if (ft_strequ(flt->ttms_tab[i]->data, new_ttms->data))
-			return (0);
+			return (FALSE);
 		++i;
 	}
-	return (1);
+	return (TRUE);
 }
 
-int			read_ttms(t_fillit *flt, char *path)
+int				read_ttms(t_fillit *flt, char *path)
 {
 	int		fd;
 	char	buff[21];
