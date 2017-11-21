@@ -6,7 +6,7 @@
 /*   By: yguaye <yguqye@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 11:42:04 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 16:15:58 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/21 17:09:09 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # define		SET					1
 # define		MOD(x)				((x < 0) ? 0 : x)
 # define		DEF_SIZE			4
+# define		OFFSET_SIZE			4
+# define		TTMS_TAB			27
 
 typedef enum		e_bool
 {
@@ -31,12 +33,12 @@ typedef enum		e_bool
 typedef struct		s_ttms
 {
 	size_t			index;
-	char			offset[3];
+	char			offset[OFFSET_SIZE];
 }					t_ttms;
 
 typedef struct		s_fillit
 {
-	t_ttms			*ttms_tab[27];
+	t_ttms			*ttms_tab[TTMS_TAB];
 	size_t			tab_len;
 	char			*grid;
 	size_t			grid_size;
