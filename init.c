@@ -6,7 +6,7 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:19:43 by pleroux           #+#    #+#             */
-/*   Updated: 2017/11/21 17:55:50 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/21 20:29:14 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,17 @@ void			set_grid_size(t_fillit *t, int len)
 	t->grid_size = ft_sqrt(len * 4);
 	if (!t->grid_size)
 		flt_puterror("Invalid grid size");
+}
+
+void			reset_index_ttms(t_fillit *t)
+{
+	size_t		i;
+
+	i = 0;
+	while (i < t->tab_len)
+	{
+		t->ttms_tab[i]->index = 0;
+		++i;
+	}
 }
 

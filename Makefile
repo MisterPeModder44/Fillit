@@ -1,26 +1,31 @@
-NAME = fillit
+NAME=  fillit
+SRCS=  main.c			\
+	   init.c			\
+	   reader.c			\
+	   ttms_creator.c	\
+	   ttms.c			\
+	   backtracking.c	\
+	   print.c			\
+	   utils.c			\
 
-SRCS = main.c init.c \
-	   reader.c ttms_creator.c \
-	   ttms.c backtracking.c \
-	   print.c utils.c \
-OBJS = $(SRCS:.c=.o)
-INCLUDES = ./
+OBJS=  $(SRCS:.c=.o)
+INCLUDES=./
+LIBFT=libft/
+CC=gcc
+FLAGS=-Wall -Werror -Wextra
+RM=/bin/rm
 
-CC = clang
-FLAGS = -Wall -Werror -Wextra
-RM = /bin/rm
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	@echo "Compiling $(NAME)..."
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	@echo "$(OBJS)"
+	$(CC) -o $@ $^ -L $(LIBFT) -lft $(FLAGS)
 	@echo "Successfully created $(NAME)!"
 
 %.o: %.c
 	@echo "Creating object files..."
-	$(CC) $(FLAGS) -I $(INCLUDES) -o $@ -c $<
-
-all: $(NAME)
+	$(CC) -o $@ -c $< $(FLAGS) -I $(INCLUDES)
 
 clean:
 	$(RM) -f $(OBJS)
@@ -28,6 +33,6 @@ clean:
 fclean: clean
 	$(RM) -f $(NAME)
 
-re: fclean all
+re: fclean $(NAME)
 
 .PHONY: all clean fclean re

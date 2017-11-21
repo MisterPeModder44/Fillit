@@ -6,7 +6,7 @@
 /*   By: yguaye <yguqye@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 11:42:04 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 18:25:51 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/21 20:41:25 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,9 @@ void				grid_up(t_fillit *t);
 t_bool				set_ttms(t_fillit *t, int i);
 int					search_empty_case(t_fillit *t, size_t index);
 t_bool				set_or_check_ttms(t_fillit *t, int i, t_bool b_set_check);
-void				remove_ttms(t_fillit *t, size_t i);
+void				remove_ttms(t_fillit *t, int i);
 void				print_grid(t_fillit *t);
 int					resolve(t_fillit *t, int i);
+void				reset_index_ttms(t_fillit *t);
 
 #endif

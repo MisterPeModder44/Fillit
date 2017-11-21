@@ -6,7 +6,7 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 17:33:59 by pleroux           #+#    #+#             */
-/*   Updated: 2017/11/21 18:17:40 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/21 20:41:30 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ t_bool		set_ttms(t_fillit *t, int i)
 	 */
 	int		index;
 
-	index = 0;
-	while (index <= (int)t->grid_len)
+	index = t->ttms_tab[i]->index;
+	while (index < (int)t->grid_len)
 	{
 		index = search_empty_case(t, index);
-		fprintf(stderr, "set_ttms index : %d\n", index);
+		fprintf(stderr, "set_ttms index : %d, %d\n", index, i);
 		if (index == ERROR)
 			return (FALSE);
 		t->ttms_tab[i]->index = index;
 		if (set_or_check_ttms(t, i, CHECK))
 		{
 			/*ok placement*/
-			fprintf(stderr, "set_tms : OK placement\n");
+			fprintf(stderr, "set_tms : OK placement, %d\n", i);
 			if (!set_or_check_ttms(t, i, SET))
 				flt_puterror("can't set ttms");
 			return (TRUE);
@@ -47,7 +47,7 @@ t_bool		set_ttms(t_fillit *t, int i)
 	}
 	t->ttms_tab[i]->index = 0;
 
-			fprintf(stderr, "set_tms : NOK placement\n");
+			fprintf(stderr, "set_tms : NOK placement%d\n", i);
 	return (FALSE);
 }
 
@@ -78,7 +78,7 @@ t_bool		set_or_check_ttms(t_fillit *t, int i, t_bool b_set_or_check)
 		fprintf(stderr, "  --> id_ofs : %lu grid_len :%lu\n", id_ofs, t->grid_len);
 		if (id_ofs >= t->grid_len || t->grid[id_ofs] != '.')
 		{
-			fprintf(stderr, "CHECK FALSE\n");
+			fprintf(stderr, "CHECK FALSE %d\n", i);
 			return (FALSE);
 		}
 		else if (b_set_or_check == SET)
@@ -86,15 +86,16 @@ t_bool		set_or_check_ttms(t_fillit *t, int i, t_bool b_set_or_check)
 		++j;
 	}
 	/*ok placement*/
-			fprintf(stderr, "TTMS OK\n");
+			fprintf(stderr, "TTMS OK %d\n", i);
 	return (TRUE);
 }
 
-void		remove_ttms(t_fillit *t, size_t i)
+void		remove_ttms(t_fillit *t, int i)
 {
 	char	c;
 	int		j;
 
+	fprintf(stderr, "remove_ttms %d\n", i);
 	c = 'A' + i;
 	j = 0;
 	while (t->grid[j])

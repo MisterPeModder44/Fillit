@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:39:10 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 18:06:07 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/21 20:28:56 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	grid_up(t_fillit *t)
 	{
 		++(t->grid_size);
 		init_grid(t);
+		reset_index_ttms(t);
 	}
 }
 
