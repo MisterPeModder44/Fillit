@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 17:49:01 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 18:14:13 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/21 21:58:33 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,11 @@ static int		put_offset(char *buff, t_ttms **nt, int *offset, int i)
 int				create_ttms(char *buff, t_ttms **nt)
 {
 	int		i;
-	int		j;
 	int		offset_index;
 
 	if (!check_ttms_buff(buff) || !(*nt = (t_ttms *)malloc(sizeof(t_ttms))))
 		return (flt_puterror("An error occured while creating a tetriminos."));
 	i = 0;
-	j = 0;
 	offset_index = 0;
 	while (i < 20)
 	{
