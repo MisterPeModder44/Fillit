@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:39:10 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 16:10:35 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/21 17:37:15 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,17 @@ void			grid_up(t_fillit *t)
 		++(t->grid_size);
 		init_grid(t);
 	}
+}
+
+int		ft_sqrt(int nb)
+{
+	int i;
+
+	i = 1;
+	while (nb > (i * i) && i < 65535)
+		i++;
+	if (i >= 65535)
+		return (0);
+	else
+		return (i);
 }
