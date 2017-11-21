@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 17:49:01 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 16:14:43 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/21 17:29:17 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,18 @@ int				create_ttms(char *buff, t_ttms **nt)
 		return (flt_puterror("An error occured while creating a tetriminos."));
 	i = 0;
 	j = 0;
-	offset_index = -1;
+	offset_index = 0;
 	while (i < 20)
 	{
 		if (buff[i] == '#')
 		{
-			if (offset_index > 2)
+			if (offset_index > OFFSET_SIZE - 1)
 			{
 				free(*nt);
 				return (flt_puterror("A ttms cannot have more than 4 blocks"));
 			}
-			else if (offset_index != -1)
-				(*nt)->offset[offset_index] = j;
+			else if (offset_index > 0)
+				(*nt)->offset[offset_index] = j + 1;
 			++offset_index;
 			j = 0;
 		}
