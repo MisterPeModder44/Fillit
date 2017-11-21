@@ -6,7 +6,7 @@
 /*   By: yguaye <yguqye@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 11:42:04 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 13:24:33 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/21 14:14:17 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ typedef enum		e_bool
 typedef struct		s_ttms
 {
 	size_t			index;
-	/*int			width;*/
-	/*int			height;*/
 	char			offset[3];
 }					t_ttms;
 
