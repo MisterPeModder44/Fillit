@@ -6,31 +6,49 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 17:49:01 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 21:58:33 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/22 16:54:17 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 #include <stdlib.h>
 
+#include <stdio.h>
+
+
+static int		get_links(int i, char *buff)
+{
+	int		around;
+
+	around = 0;
+	if (i > 0 && buff[i - 1] == '#')
+		++around;
+	if (i < 19 && buff[i + 1] == '#')
+		++around;
+	if (i / 5 > 0 && buff[i - 5] == '#')
+		++around;
+	if (i / 5 < 3 && buff[i + 5] == '#')
+		++around;
+	return (around);
+}
+
 static t_bool	check_ttms_buff(char *buff)
 {
 	int		i;
+	int		links;
 
 	i = 0;
+	links = 0;
 	while (i < 20)
 	{
 		if (buff[i] == '#')
-		{
-			if ((i > 0 && buff[i - 1] != '#') && (i < 19 && buff[i + 1] != '#')
-					&& (i / 5 > 0 && buff[i - 5] != '#') && (i / 5 < 3 &&
-						buff[i + 5] != '#'))
-			{
-				flt_puterror("Blocks must all be next to each other!");
-				return (FALSE);
-			}
-		}
+			links += get_links(i, buff);
 		++i;
+	}
+	if (links < 6)
+	{
+		flt_puterror("Blocks must all be next to each other!");
+		return (FALSE);
 	}
 	return (TRUE);
 }
@@ -65,11 +83,17 @@ int				create_ttms(char *buff, t_ttms **nt)
 		return (flt_puterror("An error occured while creating a tetriminos."));
 	i = 0;
 	offset_index = 0;
+	(*nt)->index = 0;
 	while (i < 20)
 	{
 		if (put_offset(buff, nt, &offset_index, i) == ERROR)
 			return (ERROR);
 		++i;
+	}
+	if (offset_index != 4)
+	{
+		free(*nt);
+		return (flt_puterror("A ttms cannot have less than 4 blocks!"));
 	}
 	return (0);
 }
