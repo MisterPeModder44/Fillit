@@ -6,7 +6,7 @@
 /*   By: yguaye <yguqye@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 11:42:04 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 20:41:25 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/22 12:10:58 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ void				remove_ttms(t_fillit *t, int i);
 void				print_grid(t_fillit *t);
 int					resolve(t_fillit *t, int i);
 void				reset_index_ttms(t_fillit *t);
+void				print_grid_debug(t_fillit *t);
 
 #endif

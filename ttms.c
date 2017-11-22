@@ -6,7 +6,7 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 17:33:59 by pleroux           #+#    #+#             */
-/*   Updated: 2017/11/21 20:41:30 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/22 12:45:37 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ t_bool		set_ttms(t_fillit *t, int i)
 		index = search_empty_case(t, index);
 		fprintf(stderr, "set_ttms index : %d, %d\n", index, i);
 		if (index == ERROR)
+		{
+			t->ttms_tab[i]->index = 0;
 			return (FALSE);
+		}
 		t->ttms_tab[i]->index = index;
 		if (set_or_check_ttms(t, i, CHECK))
 		{
@@ -96,6 +99,7 @@ void		remove_ttms(t_fillit *t, int i)
 	int		j;
 
 	fprintf(stderr, "remove_ttms %d\n", i);
+	//t->ttms_tab[i]->index = 0;
 	c = 'A' + i;
 	j = 0;
 	while (t->grid[j])
