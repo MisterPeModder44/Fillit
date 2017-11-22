@@ -6,7 +6,7 @@
 /*   By: yguaye <yguqye@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 11:42:04 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/22 13:15:18 by pierre           ###   ########.fr       */
+/*   Updated: 2017/11/22 13:29:16 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int					search_empty_case(t_fillit *t, size_t index);
 t_bool				set_or_check_ttms(t_fillit *t, int i, t_bool b_set_check);
 void				remove_ttms(t_fillit *t, int i);
 void				print_grid(t_fillit *t);
-//int					resolve(t_fillit *t, int i);
 void				reset_index_ttms(t_fillit *t);
 void				print_grid_debug(t_fillit *t);
 int					backtracking(t_fillit *t);
