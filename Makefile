@@ -34,16 +34,17 @@ libft:
 
 libft_fclean:
 	@make -C $(LIBFT) fclean > /dev/null
-	@printf "\033[33mRemoved \033[93mlibft objects and executable!\033[0m\n"
+	@printf "\033[33mRemoved \033[93mlibft executable!\033[0m\n"
 
 clean:
 	@$(RM) -f $(OBJS)
+	@make -C $(LIBFT) clean > /dev/null
 	@printf "\033[33mRemoved \033[93mobject files!\033[0m\n"
 
-fclean: clean
+fclean: libft_fclean clean
 	@$(RM) -f $(NAME)
 	@printf "\033[33mRemoved \033[93m$(NAME) executable!\033[0m\n"
 
-re: fclean libft_fclean $(NAME)
+re: fclean $(NAME)
 
 .PHONY: all clean fclean re libft libft_fclean
