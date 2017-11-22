@@ -18,31 +18,31 @@ RM=/bin/rm
 all: $(NAME)
 
 $(NAME): libft $(OBJS)
-	@echo -e "\n\e[90mCompiling \e[0m$(NAME)\e[0m"
+	@printf "\n\033[90mCompiling \033[0m$(NAME)\033[0m\n"
 	@$(CC) -o $@ $(filter-out $<,$^) -L $(LIBFT) -lft $(FLAGS)
-	@echo -e "\e[32mSuccessfully created \e[4;92m$(NAME)\e[32m!\e[0m"
+	@printf "\033[32mSuccessfully created \033[4;92m$(NAME)\033[32m!\033[0m\n"
 
 %.o: %.c
-	@echo -ne "\e[90mCreating object file \e[0m$@ "
+	@printf "\033[90mCreating object file \033[0m$@ "
 	@$(CC) -o $@ -c $< $(FLAGS) -I $(INCLUDES)
-	@echo -e "\e[32mdone!\e[0m"
+	@printf "\033[32mdone!\033[0m\n"
 
 libft:
-	@echo -ne "\n\e[90mCompiling \e[0mlibft\e[0m "
+	@printf "\n\033[90mCompiling \033[0mlibft\033[0m "
 	@make -C $(LIBFT) all > /dev/null
-	@echo -e "\e[32mdone!\e[0m\n"
+	@printf "\033[32mdone!\033[0m\n\n"
 
 libft_fclean:
 	@make -C $(LIBFT) fclean > /dev/null
-	@echo -e "\e[33mRemoved \e[93mlibft objects and executable!\e[0m"
+	@printf "\033[33mRemoved \033[93mlibft objects and executable!\033[0m\n"
 
 clean:
 	@$(RM) -f $(OBJS)
-	@echo -e "\e[33mRemoved \e[93mobject files!\e[0m"
+	@printf "\033[33mRemoved \033[93mobject files!\033[0m\n"
 
 fclean: clean
 	@$(RM) -f $(NAME)
-	@echo -e "\e[33mRemoved \e[93m$(NAME) executable!\e[0m"
+	@printf "\033[33mRemoved \033[93m$(NAME) executable!\033[0m\n"
 
 re: fclean libft_fclean $(NAME)
 
