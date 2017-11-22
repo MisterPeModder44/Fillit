@@ -6,11 +6,12 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 17:18:31 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/21 18:26:49 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/22 11:47:41 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+#include "libft/libft.h"
 
 int		main(int argc, char **argv)
 {
@@ -28,5 +29,13 @@ int		main(int argc, char **argv)
 			return (0);
 		}
 	}
+	else
+	{
+		ft_putstr("usage: ");
+		ft_putstr(argv[0]);
+		ft_putendl(" file");
+		return (-2);
+	}
+	ft_putendl("error");
 	return (-1);
 }
