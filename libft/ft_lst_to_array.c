@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/13 23:29:42 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/15 16:26:52 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/17 21:44:30 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		*ft_lst_to_array(t_list *lst)
 	size_t	i;
 
 	if (!lst || !(tab = ft_lst_create_tab(lst)))
-		return ((void **)NULL);
+		return ((void *)NULL);
 	i = 0;
 	while (lst)
 	{
