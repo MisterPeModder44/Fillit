@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 17:18:31 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/22 13:45:33 by pierre           ###   ########.fr       */
+/*   Updated: 2017/11/22 22:24:57 by pierre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		main(int argc, char **argv)
 	{
 		ft_putstr("usage: ");
 		ft_putstr(argv[0]);
-		ft_putendl(" file");
+		ft_putendl(" [file]");
 		return (2);
 	}
 	ft_putendl("error");
