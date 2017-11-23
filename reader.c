@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:18:11 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/22 10:40:44 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/23 22:13:08 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int				read_ttms(t_fillit *flt, char *path)
 		++flt->tab_len;
 		pr = r;
 	}
-	if (r == -1)
+	if (r == -1 || flt->tab_len == 0)
 		return (flt_puterror("An error occured while reading the file!"));
 	close(fd);
 	return (0);
