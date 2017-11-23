@@ -6,14 +6,25 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 17:18:31 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/23 13:48:01 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/23 14:03:28 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 #include "libft/libft.h"
+#include <stdlib.h>
 
-int		main(int argc, char **argv)
+static void	free_memory(t_fillit *flt)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < flt->tab_len)
+		free(flt->ttms_tab[i++]);
+	free(flt->grid);
+}
+
+int			main(int argc, char **argv)
 {
 	t_fillit	flt;
 
@@ -26,6 +37,7 @@ int		main(int argc, char **argv)
 			init_grid(&flt);
 			backtracking(&flt);
 			print_grid(&flt);
+			free_memory(&flt);
 			return (0);
 		}
 	}
