@@ -6,15 +6,13 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 17:18:31 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/23 14:44:11 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/23 15:11:31 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "fillit.h"
 #include "libft/libft.h"
-
-
 
 int			main(int argc, char **argv)
 {
