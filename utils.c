@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:39:10 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/22 13:31:00 by pierre           ###   ########.fr       */
+/*   Updated: 2017/11/23 14:43:52 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,14 @@ int		flt_puterror(char *reason)
 	return (ERROR);
 }
 
-void	free_fillit(t_fillit *t)
+void	free_memory(t_fillit *flt)
 {
-	int			i;
+	size_t	i;
 
 	i = 0;
-	while (i < 27)
-	{
-		free(t->ttms_tab[i]);
-		i++;
-	}
-	free(t->grid);
+	while (i < flt->tab_len)
+		free(flt->ttms_tab[i++]);
+	free(flt->grid);
 }
 
 void	grid_up(t_fillit *t)

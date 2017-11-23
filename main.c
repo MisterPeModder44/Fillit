@@ -6,23 +6,15 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 17:18:31 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/23 14:36:53 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/11/23 14:44:11 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "fillit.h"
 #include "libft/libft.h"
-#include <stdlib.h>
 
-static void	free_memory(t_fillit *flt)
-{
-	size_t	i;
 
-	i = 0;
-	while (i < flt->tab_len)
-		free(flt->ttms_tab[i++]);
-	free(flt->grid);
-}
 
 int			main(int argc, char **argv)
 {

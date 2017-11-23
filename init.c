@@ -6,13 +6,13 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:19:43 by pleroux           #+#    #+#             */
-/*   Updated: 2017/11/23 10:36:46 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/23 14:41:38 by pleroux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "fillit.h"
 #include "libft/libft.h"
-#include "stdlib.h"
 
 void			init_fillit(t_fillit *t)
 {
