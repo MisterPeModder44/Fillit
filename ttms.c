@@ -6,13 +6,12 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 17:33:59 by pleroux           #+#    #+#             */
-/*   Updated: 2017/11/23 10:41:26 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/23 14:38:31 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "fillit.h"
-#include <stdio.h>
 
 t_bool		set_ttms(t_fillit *t, int i)
 {

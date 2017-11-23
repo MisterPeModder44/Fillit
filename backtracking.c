@@ -6,13 +6,12 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 15:59:34 by pleroux           #+#    #+#             */
-/*   Updated: 2017/11/22 13:28:55 by pierre           ###   ########.fr       */
+/*   Updated: 2017/11/23 14:38:39 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include "fillit.h"
-#include <stdio.h>
 
 int			backtracking(t_fillit *t)
 {
