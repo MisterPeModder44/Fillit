@@ -6,7 +6,7 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 16:14:03 by pleroux           #+#    #+#             */
-/*   Updated: 2017/11/22 12:12:09 by pierre           ###   ########.fr       */
+/*   Updated: 2017/11/23 10:39:16 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void			print_grid(t_fillit *t)
 {
 	ft_putstr(t->grid);
 }
-
 
 void			print_grid_debug(t_fillit *t)
 {

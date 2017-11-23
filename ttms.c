@@ -6,7 +6,7 @@
 /*   By: pleroux <pleroux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 17:33:59 by pleroux           #+#    #+#             */
-/*   Updated: 2017/11/22 13:30:34 by pierre           ###   ########.fr       */
+/*   Updated: 2017/11/23 10:41:26 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int			search_empty_case(t_fillit *t, size_t index)
 		return (ERROR);
 	return (index);
 }
-
 
 t_bool		set_or_check_ttms(t_fillit *t, int i, t_bool b_set_or_check)
 {

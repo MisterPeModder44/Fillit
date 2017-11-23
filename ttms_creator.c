@@ -6,15 +6,12 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 17:49:01 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/22 16:54:17 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/23 10:40:34 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 #include <stdlib.h>
-
-#include <stdio.h>
-
 
 static int		get_links(int i, char *buff)
 {
