@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 13:18:11 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/23 22:13:08 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/11/25 17:45:41 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int				read_ttms(t_fillit *flt, char *path)
 	char	buff[21];
 	int		r;
 	int		pr;
+	int		lc;
 	t_ttms	*new_ttms;
 
 	if ((fd = open(path, O_RDONLY)) == -1)
@@ -36,8 +37,9 @@ int				read_ttms(t_fillit *flt, char *path)
 		flt->ttms_tab[flt->tab_len] = new_ttms;
 		++flt->tab_len;
 		pr = r;
+		lc = buff[r - 1];
 	}
-	if (r == -1 || flt->tab_len == 0)
+	if (r == -1 || flt->tab_len == 0 || (pr == 21 && lc == '\n'))
 		return (flt_puterror("An error occured while reading the file!"));
 	close(fd);
 	return (0);
