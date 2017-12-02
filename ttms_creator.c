@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 17:49:01 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/23 10:40:34 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/12/02 12:12:25 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,26 @@ static int		get_links(int i, char *buff)
 static t_bool	check_ttms_buff(char *buff)
 {
 	int		i;
+	int		j;
 	int		links;
 
 	i = 0;
+	j = 0;
 	links = 0;
 	while (i < 20)
 	{
 		if (buff[i] == '#')
 			links += get_links(i, buff);
+		if (buff[i] != '\n')
+			++j;
+		else if (j != 4)
+			return (FALSE);
+		else
+			j = 0;
 		++i;
 	}
 	if (links < 6)
-	{
-		flt_puterror("Blocks must all be next to each other!");
 		return (FALSE);
-	}
 	return (TRUE);
 }
 
