@@ -5,7 +5,6 @@ SRCS=  main.c			\
 	   ttms_creator.c	\
 	   ttms.c			\
 	   backtracking.c	\
-	   print.c			\
 	   utils.c			\
 
 OBJS=  $(SRCS:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: yguaye <yguqye@student42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 11:42:04 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/23 14:43:42 by pleroux          ###   ########.fr       */
+/*   Updated: 2017/12/02 13:12:05 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define DEF_SIZE		4
 # define OFFSET_SIZE	4
 # define TTMS_TAB		27
-# define DEBUG_MODE		0
+# define DEBUG_MODE		1
 
 typedef enum		e_bool
 {
@@ -59,9 +59,7 @@ t_bool				set_ttms(t_fillit *t, int i);
 int					search_empty_case(t_fillit *t, size_t index);
 t_bool				set_or_check_ttms(t_fillit *t, int i, t_bool b_set_check);
 void				remove_ttms(t_fillit *t, int i);
-void				print_grid(t_fillit *t);
 void				reset_index_ttms(t_fillit *t);
-void				print_grid_debug(t_fillit *t);
 int					backtracking(t_fillit *t);
 
 #endif

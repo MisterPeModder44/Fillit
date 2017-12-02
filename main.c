@@ -6,7 +6,7 @@
 /*   By: yguaye <yguaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 17:18:31 by yguaye            #+#    #+#             */
-/*   Updated: 2017/11/23 15:11:31 by yguaye           ###   ########.fr       */
+/*   Updated: 2017/12/02 13:07:05 by yguaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int			main(int argc, char **argv)
 			set_grid_size(&flt, flt.tab_len);
 			init_grid(&flt);
 			backtracking(&flt);
-			print_grid(&flt);
+			ft_putstr(flt.grid);
 			free_memory(&flt);
 			return (0);
 		}
